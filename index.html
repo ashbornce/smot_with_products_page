@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Layanan percetakan berkualitas untuk undangan, stempel, nota, banner, cetak foto, dan lainnya. Temukan solusi cetak terbaik di SMOT Printing.">
+    <meta name="keywords"
+        content="percetakan, cetak undangan, cetak stempel, cetak nota, cetak banner, cetak dokumen, cetak foto, layanan scan, layanan ketik, SMOT Printing">
+    <title>SMOT.com Printing - Layanan Percetakan Berkualitas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .nav-item {
+            @apply text-gray-900 font-semibold hover:text-red-800 hover:shadow-red-950;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hidden md:block w-full bg-red-600 py-1 text-red-600 text-center font-semibold">
+            <a href="https://maps.app.goo.gl/pTyvWewbgQ3zC3Wm6" target="_blank"
+                class="inline-block bg-white py-1 px-6 rounded-tl-full rounded-br-full">Jl. Wonosobo -
+                Purworejo, Gandok,
+                Kalikajar,
+                Wonosobo Regency,
+                Central Java
+                56372
+            </a>
+        </div>
+    </header>
+    <!-- navbar -->
+    <nav
+        class="bg-white/50 backdrop-blur sticky top-0 shadow-lg shadow-black/20 z-40 text-primary flex justify-between items-center px-10 md:px-20 py-3">
+        <div class="navabar-brand">
+            <a href="#" class="flex flex-col items-center text-xl font-black text-red-600" style="line-height: 1;">
+                <span>SMOT.COM</span>
+                <span>KALIKAJAR</span>
+            </a>
+        </div>
+        <ul class="nav-link hidden md:flex items-center gap-10">
+            <li class="nav-item text-sd-b"><a href="#about">Tentang Kami</a></li>
+            <li class="nav-item text-sd-b"><a href="#services">Layanan</a></li>
+            <li class="nav-item text-sd-b"><a href="./pages/product.html">Produk</a></li>
+            <li class="nav-item text-sd-b"><a href="#portfolio">Portofolio</a></li>
+            <li class="nav-item text-sd-b"><a href="#contact">Kontak</a></li>
+        </ul>
+        <div class="nav-extra">
+            <a href="#contact"
+                class="sm:block hidden bg-red-600 px-4 py-2 text-white hover:bg-red-800 active:bg-red-800 font-semibold tracking-wide rounded-md">
+                Pesan Sekarang
+            </a>
+            <button class="hamburger text-red-600 block md:hidden"><i data-feather="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar"
+        class="fixed top-0 -right-1 h-full w-[50vw] bg-white shadow-lg shadow-black/30 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <ul class="flex flex-col items-start p-6 pt-20 text-lg">
+            <li class="mb-4 nav-item text-sd-b"><a href="#about">Tentang Kami</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="#services">Layanan</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="./pages/product.html">Produk</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="#portfolio">Portofolio</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="#contact">Kontak</a></li>
+            <li><a href="#"
+                    class="sm:hidden block bg-red-600 px-4 py-2 text-white hover:bg-red-800 active:bg-red-800 font-semibold tracking-wide rounded-md">
+                    Pesan Sekarang
+                </a>
+            </li>
+        </ul>
+        <button id="closeSidebar" class="absolute text-red-600 top-10 right-10 text-xl"><i
+                data-feather="x"></i></button>
+    </div>
+    <!-- Overlay -->
+    <div id="overlay"
+        class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+
+    <!-- hero -->
+    <!-- component -->
+    <section id="hero" class="hero w-full bg-center bg-cover py-8 bg-opacity-50 hero-bg">
+        <div
+            class="container w-[90%] md:w-[80%] flex flex-col bg-white/50 backdrop-filter backdrop-blur px-6 py-5 rounded-xl mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
+            <div class="lg:w-1/2 justify-start">
+                <div class="lg:max-w-lg">
+                    <h1 class="text-3xl font-bold tracking-wide text-red-600 lg:text-5xl">
+                        SMOT KALIKAJAR
+                        <br>
+                        <span class="text-2xl text-slate-900">Percetakan & Komputer</span>
+                    </h1>
+                    <div class="mt-8 flex items-center gap-6 font-semibold">
+                        <!-- Item 1 -->
+                        <p class="flex items-center text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500 mr-2" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-slate-900">Cepat</span>
+                        </p>
+
+                        <!-- Item 2 -->
+                        <p class="flex items-center text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500 mr-2" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-slate-900">Mudah</span>
+                        </p>
+
+                        <!-- Item 3 -->
+                        <p class="flex items-center text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500 mr-2" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-slate-900">Terpercaya</span>
+                        </p>
+                    </div>
+                    <div class="services-list mt-3 ms-4">
+                        <h2 class="text-xl font-bold text-red-600">Menerima Pesanan</h2>
+                        <ul class="services-list-hero font-semibold grid md:grid-cols-4 grid-cols-3 gap-2 px-2 mt-2">
+                            <li>
+                                <p>Undangan</p>
+                            </li>
+                            <li>
+                                <p>Stempel</p>
+                            </li>
+                            <li>
+                                <p>Nota</p>
+                            </li>
+                            <li>
+                                <p>Banner</p>
+                            </li>
+                            <li>
+                                <p>Print</p>
+                            </li>
+                            <li>
+                                <p>Scan</p>
+                            </li>
+                            <li>
+                                <p>Cetak Foto</p>
+                            </li>
+                            <li>
+                                <p>Ketik</p>
+                            </li>
+                            <li>
+                                <p>DLL</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cta flex items-center mt-5 gap-4">
+                        <a href="#"
+                            class="bg-blue-500 px-3 py-1 rounded-md text-lg hover:bg-blue-700 hover:text-slate-400 text-white font-semibold">Hubungi
+                            Kami</a>
+                        <a href="#services"
+                            class="bg-red-500 px-3 py-1 rounded-md text-lg hover:bg-red-700 hover:text-slate-400 text-white font-semibold">Lihat
+                            Layanan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center bg-blue-500/35 rounded-md justify-center w-full h-96 lg:w-1/2">
+                <img class="object-cover w-full h-full mx-auto rounded-md lg:max-w-2xl"
+                    src="./src/assets/img/hero-img.png" alt="glasses photo">
+            </div>
+        </div>
+    </section>
+    <!-- end hero -->
+
+    <!-- about -->
+    <section id="about" class="bg-gray-50 py-12">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-extrabold text-red-600 mb-4">Tentang Kami</h2>
+                <p class="text-lg text-gray-700">
+                    Kenali lebih dekat SMOT.COM Kalikajar dan layanan unggulan kami.
+                </p>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+                <!-- Image -->
+                <div class="lg:w-1/2 w-full">
+                    <img src="./src/assets/img/smot.png" alt="Gambar tentang kami" class="w-full rounded-lg shadow-lg">
+                </div>
+                <!-- Description -->
+                <div class="lg:w-1/2 w-full">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">SMOT.COM Kalikajar</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        <strong>SMOT.COM Kalikajar</strong> adalah usaha percetakan dan layanan komputer terpercaya
+                        yang berlokasi di Kalikajar. Kami hadir untuk memenuhi kebutuhan percetakan dan komputerisasi
+                        Anda dengan kualitas terbaik, harga terjangkau, dan pelayanan yang ramah.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Didukung oleh tim profesional dan peralatan modern, kami menyediakan berbagai layanan seperti
+                        pencetakan undangan, banner, nota, stempel, cetak foto, serta layanan pengetikan dan scanning
+                        dokumen.
+                        Tidak hanya itu, kami juga memberikan solusi untuk kebutuhan desain grafis yang kreatif dan
+                        menarik.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Dengan moto <em>"Cepat, Mudah, Terpercaya"</em>, SMOT.COM berkomitmen untuk memberikan hasil
+                        terbaik
+                        yang sesuai dengan kebutuhan pelanggan, baik untuk keperluan pribadi, bisnis, maupun institusi.
+                    </p>
+                </div>
+            </div>
+            <div class="maps px-4 mt-4">
+                <iframe class="w-full h-[20rem]"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.463073449547!2d109.96695517208344!3d-7.413890656630015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a9921df4af827%3A0x7156b8a780ca84!2sSmot%20(Komputer%26Percetakan)!5e0!3m2!1sid!2sid!4v1736932360320!5m2!1sid!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- end about -->
+
+    <!-- services -->
+    <section id="services" class="bg-white pt-12">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-extrabold text-red-600 mb-4">Layanan Unggulan Kami</h2>
+                <p class="text-lg text-gray-700">
+                    Kami menyediakan berbagai layanan percetakan berkualitas tinggi untuk memenuhi kebutuhan bisnis dan
+                    pribadi Anda.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="flex flex-col items-center text-center">
+                    <i data-feather="mail" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold text-slate-900">Undangan</h3>
+                    <p class="text-gray-500">Mencetak undangan untuk acara pernikahan, ulang tahun, atau acara formal
+                        lainnya.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i data-feather="check-square" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Stempel</h3>
+                    <p class="text-gray-500">Pembuatan stempel berkualitas tinggi untuk kebutuhan bisnis atau pribadi.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i data-feather="file-text" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Nota</h3>
+                    <p class="text-gray-500">Mencetak nota dan dokumen transaksi lainnya dengan desain khusus.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i data-feather="image" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Banner</h3>
+                    <p class="text-gray-500">Pembuatan banner promosi untuk usaha, acara, dan lainnya.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i data-feather="printer" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Print</h3>
+                    <p class="text-gray-500">Layanan cetak dokumen hitam putih maupun berwarna dengan hasil tajam.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i data-feather="search" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Scan</h3>
+                    <p class="text-gray-500">Layanan scan dokumen dan gambar dengan resolusi tinggi.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i data-feather="camera" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Cetak Foto</h3>
+                    <p class="text-gray-500">Cetak foto dengan berbagai ukuran dan kualitas premium.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i data-feather="edit" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Ketik</h3>
+                    <p class="text-gray-500">Layanan pengetikan dokumen untuk kebutuhan akademis, bisnis, dan lainnya.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i data-feather="more-horizontal" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Lainnya</h3>
+                    <p class="text-gray-500">Berbagai layanan percetakan lainnya sesuai kebutuhan Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end services -->
+
+    <!-- galery -->
+    <section class="bg-white" id="portfolio">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <h2 class="text-3xl font-extrabold text-red-600 mb-4 text-center">Bukti Keunggulan Kami</h2>
+            <div class="contain">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <img class="w-full border border-red-500 shadow-xl rounded-lg"
+                        src="./src/assets/img/product/nametag-pin.png" alt="Office Content 1">
+                    <img class="w-full border border-red-500 shadow-xl rounded-lg lg:mt-6"
+                        src="./src/assets/img/product/brosur.png" alt="Office Content 2">
+                    <img class="w-full border border-red-500 shadow-xl rounded-lg"
+                        src="./src/assets/img/product/logo.png" alt="Office Content 3">
+                    <img class="w-full border border-red-500 shadow-xl rounded-lg lg:mt-6"
+                        src="./src/assets/img/product/stiker.png" alt="Office Content 4">
+                </div>
+                <div class="show-more-button mt-8 flex justify-center items-center">
+                    <a href="./pages/portfolio.html"
+                        class="bg-red-500 px-3 py-1 rounded-md text-lg hover:bg-red-700 hover:text-slate-400 text-white font-semibold">Lihat
+                        Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end galery -->
+
+    <!-- end contact -->
+    <section id="contact" class="bg-white py-12">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16 max-w-screen-md">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-extrabold text-red-600 mb-4">Hubungi Kami</h2>
+                <p class="text-lg text-gray-700">
+                    Ada masalah teknis? Ingin memberikan feedback tentang fitur? Atau butuh informasi lebih lanjut
+                    tentang layanan kami? Beri tahu kami!
+                </p>
+            </div>
+            <form id="contactForm" class="space-y-8 p-4 border border-gray-600 shadow-lg rounded-3xl">
+                <!-- Number Input -->
+                <div>
+                    <label for="yourNumber" class="block mb-2 text-sm font-medium text-gray-700">Nomor Whatsapp</label>
+                    <input type="text" id="yourNumber" name="yourNumber"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-3"
+                        value="+62" required>
+                </div>
+                <!-- Name Input -->
+                <div>
+                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-700">Nama</label>
+                    <input type="text" id="subject" name="subject"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-3"
+                        placeholder="Masukkan nama Anda" required>
+                </div>
+                <!-- Message Input -->
+                <div>
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-700">Pesan Anda</label>
+                    <textarea id="message" name="message" rows="6"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-3"
+                        placeholder="Tulis pesan Anda di sini..." required></textarea>
+                </div>
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit"
+                        class="py-3 px-6 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:ring-red-300">
+                        Kirim Pesan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- end contact -->
+    <footer class="bg-red-500 text-white py-10">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About Section -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Tentang SMOT.COM</h3>
+                    <p class="text-sm text-gray-200">
+                        SMOT.COM adalah solusi digital untuk mencetak kebutuhan Anda dengan hasil berkualitas dan
+                        pengiriman tepat waktu. Kami mendukung bisnis Anda dengan layanan profesional dan berkomitmen
+                        pada kepuasan pelanggan.
+                    </p>
+                </div>
+                <!-- Navigation Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Navigasi</h3>
+                    <ul class="space-y-2 text-sm text-gray-200">
+                        <li><a href="#services" class="hover:text-white">Layanan</a></li>
+                        <li><a href="#about" class="hover:text-white">Tentang Kami</a></li>
+                        <li><a href="#contact" class="hover:text-white">Hubungi Kami</a></li>
+                        <li><a href="#portfolio" class="hover:text-white">Portofolio</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Section -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Kontak Kami</h3>
+                    <ul class="space-y-2 text-sm text-gray-200">
+                        <li><i class="fas fa-envelope mr-2"></i>Email: <a href="mailto:info@smot.com"
+                                class="hover:text-white">info@smot.com</a></li>
+                        <li><i class="fas fa-phone mr-2"></i>Telepon: <a href="tel:085366539716"
+                                class="hover:text-white">085366539716</a></li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Alamat: Jl. Wonosobo - Purworejo, Jl. Gandok
+                            Kalikajar, Gandok, Kalikajar, Wonosobo Regency, Central Java 56372
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-4">
+                <!-- Social Media Links -->
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <!-- Copyright -->
+                <p class="text-sm text-gray-200 mt-4 md:mt-0">&copy; 2025 SMOT.COM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>feather.replace();</script>
+    <script type="module" src="src/js/main.mjs"></script>
+</body>
+
+</html>
