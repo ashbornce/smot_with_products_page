@@ -69,7 +69,7 @@ dataProduct.forEach((product) => {
                             </svg>
                         </button>
                         <button id="cart-item" type="button"
-                            class="text-sm font-medium text-black hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 m-0">
+                            class="cart-item text-sm font-medium text-black hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 m-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -123,3 +123,134 @@ document.querySelectorAll('#detail-button').forEach((button, index) => {
 
 // Tambahkan event listener untuk tombol "Close" di dalam modal
 detailProductModal.querySelector('button:last-child').addEventListener('click', closeModal);
+
+
+// ? Shopping Cart Functionality
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartQuantity();
+});
+// Variabel untuk menyimpan data cart
+let cart = [];
+
+const cartContainer = document.querySelector('.cart-container');
+console.log(cartContainer); // Apakah ini null?
+
+// * Fungsi format currency (Rupiah)
+function formatCurrency(value) {
+    return `Rp. ${parseInt(value).toLocaleString('id-ID')}`;
+}
+
+// * Fungsi untuk menambahkan item ke dalam cart
+function addToCart(productId) {
+    const product = dataProduct.find(item => item.id === productId);
+    if (!product) return;
+
+    const existingItem = cart.find(item => item.id === productId);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+        existingItem.subtotal = existingItem.quantity * parseInt(existingItem.harga);
+    } else {
+        cart.push({
+            ...product,
+            quantity: 1,
+            subtotal: parseInt(product.harga),
+        });
+    }
+
+    renderCart();
+    updateCartQuantity(); // Perbarui jumlah di span
+}
+
+
+// * Fungsi untuk merender cart ke halaman
+function renderCart() {
+    const cartContainer = document.querySelector('.cart-container'); // Pastikan ini adalah elemen HTML yang benar
+    if (!cartContainer) {
+        console.error("Elemen .cart-container tidak ditemukan di halaman.");
+        return;
+    }
+
+    // Kosongkan kontainer
+    cartContainer.innerHTML = '';
+
+    let totalPesanan = 0;
+
+    // Loop melalui item di cart dan tambahkan ke DOM
+    cart.forEach(item => {
+        totalPesanan += item.subtotal;
+
+        const cartItem = document.createElement('div');
+        cartItem.classList.add(
+            'list', 'bg-white', 'w-full', 'px-4', 'py-2', 'sm:px-8', 'sm:py-4', 'flex',
+            'flex-col', 'sm:flex-row', 'gap-4', 'sm:gap-8', 'justify-start', 'items-start'
+        );
+
+        cartItem.innerHTML = `
+            <img src="./img/product/${item.gambarProduk}" alt="${item.namaProduk}" class="w-16 h-16 sm:w-24 sm:h-24 rounded-full">
+            <div class="block">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-5">
+                    <h2 class="text-xl sm:text-3xl font-bold">Harga barang: <span class="text-lg sm:text-2xl">${formatCurrency(item.harga)}</span></h2>
+                    <div class="action flex justify-start items-start gap-4 text-4xl">
+                        <span class="cart-action-button" onclick="updateQuantity(${item.id}, 1)">&plus;</span>
+                        <p class="text-base sm:text-2xl font-semibold">${item.quantity}</p>
+                        <span class="cart-action-button" onclick="updateQuantity(${item.id}, -1)">&minus;</span>
+                    </div>
+                </div>
+                <p class="text-base sm:text-xl font-semibold">Subtotal :</p>
+                <span class="font-extrabold text-xl sm:text-3xl">${formatCurrency(item.subtotal)}</span>
+            </div>
+        `;
+
+        cartContainer.appendChild(cartItem);
+    });
+
+    // Tambahkan total pesanan
+    const totalElement = document.createElement('h2');
+    totalElement.classList.add('text-3xl', 'font-bold');
+    totalElement.innerHTML = `Total: <span>${formatCurrency(totalPesanan)}</span>`;
+    cartContainer.appendChild(totalElement);
+}
+
+// * Fungsi untuk mengupdate jumlah barang di cart
+function updateQuantity(productId, change) {
+    const item = cart.find(item => item.id === productId);
+    if (!item) return;
+
+    item.quantity += change;
+
+    if (item.quantity <= 0) {
+        cart = cart.filter(item => item.id !== productId);
+    } else {
+        item.subtotal = item.quantity * parseInt(item.harga);
+    }
+
+    renderCart();
+    updateCartQuantity(); // Perbarui jumlah di span
+}
+
+
+// * Tambahkan event listener untuk tombol "Add to Cart"
+document.querySelectorAll('.cart-item').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        addToCart(dataProduct[index].id);
+    });
+});
+
+
+// *Tambahkan fungsi berikut untuk menghitung total jumlah produk di dalam keranjang:
+function getTotalQuantity() {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+}
+
+// * Tambahkan fungsi untuk memperbarui isi elemen <span>:
+function updateCartQuantity() {
+    const totalQuantity = getTotalQuantity();
+    const cartQuantityElement = document.getElementById('cart-quantity');
+
+    if (cartQuantityElement) {
+        // Jika jumlah produk 0, sembunyikan elemen
+        cartQuantityElement.textContent = totalQuantity > 0 ? totalQuantity : '';
+    }
+}
