@@ -117,8 +117,55 @@
         </button>
     </div>
 
+    <!-- Overlay -->
+    <div id="overlay"
+        class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+
+    <!-- product -->
+    <section id="products" class="bg-gray-50 py-8 antialiased md:py-12">
+        <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+            <div id="data-loop" class="mb-4 grid gap-4 grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
+
+            </div>
+        </div>
+        <!-- detail product -->
+        <div id="detail-product" class=" fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center"
+            style="display: none;">
+            <div class="bg-white rounded-lg shadow-lg w-[90%] md:w-[50%]">
+                <div class="px-4 py-2 bg-blue-100 border-b rounded-t-lg">
+                    <h2 class="text-lg font-semibold"></h2>
+                </div>
+                <div class="content md:flex">
+                    <div class="h-44 md:h-56 w-full">
+                        <a href="#">
+                            <img class="mx-auto h-full" src="./img/product/" alt="" />
+                        </a>
+                    </div>
+                    <div class="px-1 py-6">
+                        <p x-text="selectedItem?.description"></p>
+                        <p>Harga: <span></span></p>
+                        <p>Harga Sebelum Diskon: <span></span></p>
+                    </div>
+                </div>
+                <div class="px-4 py-2 flex justify-end items-center gap-4 bg-blue-100 border-t rounded-b-lg text-right">
+                    <button id="cart-item" type="button"
+                        class="text-sm font-medium text-black hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 m-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                    </button>
+                    <button
+                        class="px-2 py-1 bg-red-600 text-white font-semibold rounded hover:bg-red-600">Close</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- shopping cart -->
-    <div id="shopping-cart-list" class="cart-menu w-full z-50 bg-blue-100 pt-8 pb-5 items-center overflow-y-scroll">
+    <div id="shopping-cart-list"
+        class="cart-menu top-[-100%] w-full h-fit z-50 bg-blue-100 pt-8 pb-5 items-center overflow-y-scroll">
         <button id="close-cart" class="absolute right-12">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="size-8">
@@ -176,51 +223,6 @@
     </div>
 
 
-    <!-- Overlay -->
-    <div id="overlay"
-        class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
-
-    <!-- product -->
-    <section id="products" class="bg-gray-50 py-8 antialiased md:py-12">
-        <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-            <div class="mb-4 grid gap-4 grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
-                <div id="data-loop" class="rounded-lg border border-gray-400 bg-red-900 p-6 shadow-xl">
-                </div>
-            </div>
-        </div>
-        <!-- detail product -->
-        <div class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center" style="display: none;">
-            <div class="bg-white rounded-lg shadow-lg w-[90%] md:w-[50%]">
-                <div class="px-4 py-2 bg-red-200 border-b rounded-t-lg">
-                    <h2 class="text-lg font-semibold"></h2>
-                </div>
-                <div class="content md:flex">
-                    <div class="h-44 md:h-56 w-full">
-                        <a href="#">
-                            <img class="mx-auto h-full" src="./img/product/" alt="" />
-                        </a>
-                    </div>
-                    <div class="px-1 py-6">
-                        <p x-text="selectedItem?.description"></p>
-                        <p>Harga: <span></span></p>
-                        <p>Harga Sebelum Diskon: <span></span></p>
-                    </div>
-                </div>
-                <div class="px-4 py-2 flex justify-end items-center gap-4 bg-red-200 border-t rounded-b-lg text-right">
-                    <button id="cart-item" type="button"
-                        class="text-sm font-medium text-black hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 m-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>
-                    </button>
-                    <button
-                        class="px-2 py-1 bg-red-600 text-white font-semibold rounded hover:bg-red-600">Close</button>
-                </div>
-            </div>
-        </div>
-    </section>
     <script src="../src/js/app.js"></script>
     <script>
         // navbar function
@@ -281,14 +283,17 @@
 
             openCart.addEventListener('click', () => {
                 cartList.classList.remove('hidden');
+                cartList.classList.remove('top-[-100%]');
                 cartList.classList.add('fixed');
                 cartList.classList.add('flex');
                 cartList.classList.add('flex-col');
                 cartList.classList.add('active');
+                cartList.classList.add('top-0');
             });
 
             closeCart.addEventListener('click', () => {
                 cartList.classList.add('hidden');
+                cartList.classList.add('top:-100%');
                 setTimeout(() => {
                     cartList.classList.add('hidden'); // Sembunyikan elemen setelah animasi selesai
                 }, 1000); // Waktu delay harus sama dengan durasi transisi (0.3s)

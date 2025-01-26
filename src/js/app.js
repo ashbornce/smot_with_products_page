@@ -26,7 +26,7 @@ let allProductsHTML = '';
 // Iterasi dataProduct dan buat elemen HTML
 dataProduct.forEach((product) => {
     const productHTML = `
-        
+        <div class="rounded-lg border border-gray-400 bg-gray-50 p-6 shadow-xl">
             <div class="h-44 md:h-56 w-full">
                 <a href="#">
                     <img class="mx-auto h-full" src="./img/product/${product.gambarProduk}" alt="${product.namaProduk}" />
@@ -59,7 +59,7 @@ dataProduct.forEach((product) => {
                         Rp ${parseInt(product.harga).toLocaleString('id-ID')}
                     </p>
                     <div class="button-group flex justify-center items-center w-full md:w-auto">
-                        <button class="px-4 py-2 text-black rounded">
+                        <button id="detail-button" class="px-4 py-2 text-black rounded">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -79,6 +79,7 @@ dataProduct.forEach((product) => {
                     </div>
                 </div>
             </div>
+        </div>
     `;
     allProductsHTML += productHTML;
 });
@@ -86,4 +87,39 @@ dataProduct.forEach((product) => {
 // Tambahkan semua elemen ke dalam container sekaligus
 dataLoopContainer.innerHTML = allProductsHTML;
 console.log(dataProduct); // Pastikan data benar
-console.log(allProductsHTML); // Periksa HTML yang dihasilkan
+console.log(allProductsHTML); // Periksa HTML yang dihasilkan .
+
+// Tangkap elemen modal detail produk
+const detailProductModal = document.getElementById('detail-product');
+const detailTitle = detailProductModal.querySelector('h2');
+const detailImage = detailProductModal.querySelector('img');
+const detailDescription = detailProductModal.querySelector('p[x-text]');
+const detailPrice = detailProductModal.querySelector('p:nth-of-type(2) span');
+const detailPriceBeforeDiscount = detailProductModal.querySelector('p:nth-of-type(3) span');
+
+// Fungsi untuk menampilkan modal dengan detail produk
+function showProductDetail(product) {
+    detailTitle.textContent = product.namaProduk;
+    detailImage.src = `./img/product/${product.gambarProduk}`;
+    detailImage.alt = product.namaProduk;
+    detailDescription.textContent = product.deskripsi;
+    detailPrice.textContent = `Rp ${parseInt(product.harga).toLocaleString('id-ID')}`;
+    detailPriceBeforeDiscount.textContent = `Rp ${(parseInt(product.harga) * 1.2).toLocaleString('id-ID')}`; // Contoh: Tambahkan 20% untuk harga sebelum diskon
+    detailProductModal.style.display = 'flex'; // Tampilkan modal
+}
+
+// Fungsi untuk menutup modal
+function closeModal() {
+    detailProductModal.style.display = 'none';
+}
+
+// Tambahkan event listener ke tombol "Detail"
+document.querySelectorAll('#detail-button').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const product = dataProduct[index]; // Ambil data produk berdasarkan index
+        showProductDetail(product);
+    });
+});
+
+// Tambahkan event listener untuk tombol "Close" di dalam modal
+detailProductModal.querySelector('button:last-child').addEventListener('click', closeModal);
