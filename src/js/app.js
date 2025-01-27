@@ -1,17 +1,17 @@
 const dataProduct = [
     {
         id: 1,
-        namaProduk: 'komputer',
-        gambarProduk: 'komputer.jpg',
-        harga: '2000000',
+        namaProduk: 'brosur',
+        gambarProduk: 'brosur.png',
+        harga: '50000',
         deskripsi:
             'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, dolorem necessitatibus? Quasi molestiae officia illo at, expedita fugiat sapiente aspernatur saepe omnis voluptas nostrum earum consequuntur vitae maiores, voluptatibus sed?',
     },
     {
         id: 2,
-        namaProduk: 'laptop',
-        gambarProduk: 'laptop.jpg',
-        harga: '6000000',
+        namaProduk: 'nametag-pin',
+        gambarProduk: 'nametag-pin.png',
+        harga: '60000',
         deskripsi:
             'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, dolorem necessitatibus? Quasi molestiae officia illo at, expedita fugiat sapiente?',
     },
@@ -38,24 +38,8 @@ dataProduct.forEach((product) => {
                         ${product.namaProduk}
                     </h2>
                 </a>
-                <ul class="mt-2 flex items-center gap-4">
-                    <li class="flex items-center gap-2">
-                        <svg class="h-4 w-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 7h6l2 4m-8-4v8m0-8V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v9h2m8 0H9m4 0h2m4 0h2v-4m0 0h-5m3.5 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-10 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
-                        </svg>
-                        <p class="text-sm font-medium text-gray-500">Pelayanan Cepat</p>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-4 w-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
-                                d="M8 7V6c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v7c0 .6-.4 1-1 1h-1M3 18v-7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v7c0 .6-.4 1-1 1H4a1 1 0 0 1-1-1Zm8-3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-                        </svg>
-                        <p class="text-sm font-medium text-gray-500">Harga Terjangkau</p>
-                    </li>
-                </ul>
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-start gap-1 md:gap-4">
-                    <p class="text-2xl font-extrabold leading-tight text-gray-900 text-left w-full md:w-auto">
+                    <p class="text-balance mt-4 md:text-2xl font-extrabold leading-tight text-gray-900 text-left w-full md:w-auto">
                         Rp ${parseInt(product.harga).toLocaleString('id-ID')}
                     </p>
                     <div class="button-group flex justify-center items-center w-full md:w-auto">
@@ -188,14 +172,15 @@ function renderCart() {
         );
 
         cartItem.innerHTML = `
+            <h2 class="text-xl sm:text-3xl font-bold">${item.namaProduk}</h2>
             <img src="./img/product/${item.gambarProduk}" alt="${item.namaProduk}" class="w-16 h-16 sm:w-24 sm:h-24 rounded-full">
             <div class="block">
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-5">
-                    <h2 class="text-xl sm:text-3xl font-bold">Harga barang: <span class="text-lg sm:text-2xl">${formatCurrency(item.harga)}</span></h2>
+                    <h3 class="text-xl sm:text-3xl font-bold">Harga barang: <span class="text-lg sm:text-2xl">${formatCurrency(item.harga)}</span></h3>
                     <div class="action flex justify-start items-start gap-4 text-4xl">
-                        <span class="cart-action-button" onclick="updateQuantity(${item.id}, 1)">&plus;</span>
-                        <p class="text-base sm:text-2xl font-semibold">${item.quantity}</p>
                         <span class="cart-action-button" onclick="updateQuantity(${item.id}, -1)">&minus;</span>
+                        <p class="text-base sm:text-2xl font-semibold">${item.quantity}</p>
+                        <span class="cart-action-button" onclick="updateQuantity(${item.id}, 1)">&plus;</span>
                     </div>
                 </div>
                 <p class="text-base sm:text-xl font-semibold">Subtotal :</p>
@@ -254,3 +239,55 @@ function updateCartQuantity() {
         cartQuantityElement.textContent = totalQuantity > 0 ? totalQuantity : '';
     }
 }
+
+
+// ? fungsi untuk mensubmit data pada cart menjadi pesan wa
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('cart-form');
+    const submitButton = document.getElementById('submit-btn');
+    const whatsappNumber = '6283879367174'; // Ganti dengan nomor WhatsApp tujuan
+
+    // Fungsi untuk menyusun pesan WhatsApp
+    function createWhatsAppMessage(cart, formData) {
+        let message = `Halo, saya ingin memesan:\n\n`;
+
+        // Tambahkan data produk
+        cart.forEach((item, index) => {
+            message += `${index + 1}. ${item.namaProduk}\n   Quantity: ${item.quantity}\n   Subtotal: ${formatCurrency(item.subtotal)}\n`;
+        });
+
+        // Tambahkan total
+        const total = cart.reduce((sum, item) => sum + item.subtotal, 0);
+        message += `\nTotal: ${formatCurrency(total)}\n\n`;
+
+        // Tambahkan data form
+        message += `Informasi Pemesan:\nNama: ${formData.nama}\nKontak: ${formData.contact}\nAlamat: ${formData.address}`;
+
+        return encodeURIComponent(message); // Encode pesan untuk URL
+    }
+
+    // Event listener untuk submit form
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Mencegah reload halaman
+
+        // Ambil data form
+        const formData = {
+            nama: document.getElementById('nama').value,
+            contact: document.getElementById('contact').value,
+            address: document.getElementById('address').value,
+        };
+
+        // Periksa jika cart kosong
+        if (cart.length === 0) {
+            alert('Keranjang belanja Anda kosong.');
+            return;
+        }
+
+        // Susun pesan WhatsApp
+        const message = createWhatsAppMessage(cart, formData);
+
+        // Redirect ke WhatsApp
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank');
+    });
+});

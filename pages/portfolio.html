@@ -13,17 +13,6 @@
     <link rel="stylesheet" href="src/css/style.css">
     <script src="https://unpkg.com/feather-icons"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
-            }
-        }
-    </script>
     <style type="text/tailwindcss">
         @tailwind base;
         @tailwind components;
@@ -52,7 +41,8 @@
     <nav
         class="bg-white/50 backdrop-blur sticky top-0 shadow-lg shadow-black/20 z-40 text-primary flex justify-between items-center px-10 md:px-20 py-3">
         <div class="navabar-brand">
-            <a href="#" class="flex flex-col items-center text-xl font-black text-red-600" style="line-height: 1;">
+            <a href="../index.html" class="flex flex-col items-center text-xl font-black text-red-600"
+                style="line-height: 1;">
                 <span>SMOT.COM</span>
                 <span>KALIKAJAR</span>
             </a>
@@ -60,16 +50,24 @@
         <ul class="nav-link hidden md:flex items-center gap-10">
             <li class="nav-item text-sd-b"><a href="../index.html#about">Tentang Kami</a></li>
             <li class="nav-item text-sd-b"><a href="../index.html#services">Layanan</a></li>
-            <li class="nav-item text-sd-b"><a href="product.html">Produk</a></li>
+            <li class="nav-item text-sd-b"><a href="./product.html">Produk</a></li>
             <li class="nav-item text-sd-b"><a href="#">Portofolio</a></li>
             <li class="nav-item text-sd-b"><a href="../index.html#contact">Kontak</a></li>
         </ul>
-        <div class="nav-extra">
-            <a href="#contact"
-                class="sm:block hidden bg-red-600 px-4 py-2 text-white hover:bg-red-800 active:bg-red-800 font-semibold tracking-wide rounded-md">
+        <div class="nav-extra flex items-center gap-4 md:gap-8">
+            <!-- Pesan Sekarang Button -->
+            <a href="../index.html#contact"
+                class="hidden md:block bg-red-600 px-4 py-2 text-white hover:bg-red-800 active:bg-red-800 font-semibold tracking-wide rounded-md order-2">
                 Pesan Sekarang
             </a>
-            <button class="hamburger text-red-600 block md:hidden"><i data-feather="menu"></i></button>
+            <!-- Hamburger Menu -->
+            <button class="hamburger text-red-600 block md:hidden order-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
         </div>
     </nav>
 
@@ -79,21 +77,74 @@
         <ul class="flex flex-col items-start p-6 pt-20 text-lg">
             <li class="mb-4 nav-item text-sd-b"><a href="../index.html#about">Tentang Kami</a></li>
             <li class="mb-4 nav-item text-sd-b"><a href="../index.html#services">Layanan</a></li>
-            <li class="mb-4 nav-item text-sd-b"><a href="product.html">Produk</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="./product.html">Produk</a></li>
             <li class="mb-4 nav-item text-sd-b"><a href="#">Portofolio</a></li>
             <li class="mb-4 nav-item text-sd-b"><a href="../index.html#contact">Kontak</a></li>
-            <li><a href="#"
-                    class="sm:hidden block bg-red-600 px-4 py-2 text-white hover:bg-red-800 active:bg-red-800 font-semibold tracking-wide rounded-md">
-                    Pesan Sekarang
-                </a>
-            </li>
         </ul>
-        <button id="closeSidebar" class="absolute text-red-600 top-10 right-10 text-xl"><i
-                data-feather="x"></i></button>
+        <button id="closeSidebar" class="absolute text-red-600 top-10 right-10 text-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
     </div>
     <!-- Overlay -->
     <div id="overlay"
         class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+
+    <!-- portfolio list -->
+    <div class="container py-8 px-4">
+        <h1 class="text-center text-3xl font-bold mb-8 text-red-600">Bukti Keunggulan Kami</h1>
+        <div class="container-list px-4 sm:px-6 lg:px-8 flex justify-center">
+            <div id="card-container" class="w-fit grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Cards will be dynamically generated here -->
+            </div>
+        </div>
+    </div>
+    <!-- portfolio end list -->
+    <!-- cta -->
+    <div class="cta-button w-full h-fit fixed bottom-7 px-8 bg-transparent md:hidden">
+        <a href="../index.html#contact" id="cta-button"
+            class="bg-red-600 text-white py-2 text-center font-semibold w-full block rounded-md">
+            <div class="flex justify-center items-center gap-4">
+                <span>Pesan Sekarang</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5" />
+                </svg>
+            </div>
+        </a>
+    </div>
+
+    <script src="../src/js/portfolio.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const closeSidebar = document.getElementById('closeSidebar');
+            const overlay = document.getElementById('overlay');
+
+            if (hamburger && sidebar && closeSidebar && overlay) {
+                // Show sidebar
+                hamburger.addEventListener('click', () => {
+                    sidebar.classList.remove('translate-x-full');
+                    overlay.classList.add('opacity-100', 'pointer-events-auto');
+                });
+
+                // Hide sidebar
+                closeSidebar.addEventListener('click', () => {
+                    sidebar.classList.add('translate-x-full');
+                    overlay.classList.remove('opacity-100', 'pointer-events-auto');
+                });
+
+                // Hide sidebar when overlay is clicked
+                overlay.addEventListener('click', () => {
+                    sidebar.classList.add('translate-x-full');
+                    overlay.classList.remove('opacity-100', 'pointer-events-auto');
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

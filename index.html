@@ -32,6 +32,10 @@
         .nav-item {
             @apply text-gray-900 font-semibold hover:text-red-800 hover:shadow-red-950;
         }
+
+        .card-list{
+            @apply flex flex-col items-center text-center hover:border hover:border-red-500 rounded-lg;
+        }
     </style>
 </head>
 
@@ -61,7 +65,7 @@
             <li class="nav-item text-sd-b"><a href="#about">Tentang Kami</a></li>
             <li class="nav-item text-sd-b"><a href="#services">Layanan</a></li>
             <li class="nav-item text-sd-b"><a href="./pages/product.html">Produk</a></li>
-            <li class="nav-item text-sd-b"><a href="#portfolio">Portofolio</a></li>
+            <li class="nav-item text-sd-b"><a href="./pages/portfolio.html">Portofolio</a></li>
             <li class="nav-item text-sd-b"><a href="#contact">Kontak</a></li>
         </ul>
         <div class="nav-extra">
@@ -80,7 +84,7 @@
             <li class="mb-4 nav-item text-sd-b"><a href="#about">Tentang Kami</a></li>
             <li class="mb-4 nav-item text-sd-b"><a href="#services">Layanan</a></li>
             <li class="mb-4 nav-item text-sd-b"><a href="./pages/product.html">Produk</a></li>
-            <li class="mb-4 nav-item text-sd-b"><a href="#portfolio">Portofolio</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="./pages/portfolio.html">Portofolio</a></li>
             <li class="mb-4 nav-item text-sd-b"><a href="#contact">Kontak</a></li>
             <li><a href="#"
                     class="sm:hidden block bg-red-600 px-4 py-2 text-white hover:bg-red-800 active:bg-red-800 font-semibold tracking-wide rounded-md">
@@ -171,7 +175,7 @@
                         </ul>
                     </div>
                     <div class="cta flex items-center mt-5 gap-4">
-                        <a href="#"
+                        <a href="#contact"
                             class="bg-blue-500 px-3 py-1 rounded-md text-lg hover:bg-blue-700 hover:text-slate-400 text-white font-semibold">Hubungi
                             Kami</a>
                         <a href="#services"
@@ -245,56 +249,68 @@
                     pribadi Anda.
                 </p>
             </div>
+            <!-- services list  -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="flex flex-col items-center text-center">
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20mencetak%20undangan%20untuk%20acara%20saya.%20Apakah%20bisa%20dibantu?"
+                    target="_blank" class="card-list">
                     <i data-feather="mail" class="w-10 h-10 text-red-600 mb-4"></i>
                     <h3 class="mb-2 text-xl font-bold text-slate-900">Undangan</h3>
-                    <p class="text-gray-500">Mencetak undangan untuk acara pernikahan, ulang tahun, atau acara formal
-                        lainnya.</p>
-                </div>
-                <div class="flex flex-col items-center text-center">
+                    <p class="text-gray-500">Mencetak undangan untuk acara pernikahan, ulang tahun, atau acara
+                        formal lainnya.</p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20membuat%20stempel%20berkualitas%20tinggi.%20Bagaimana%20caranya?"
+                    target="_blank" class="card-list">
                     <i data-feather="check-square" class="w-10 h-10 text-red-600 mb-4"></i>
                     <h3 class="mb-2 text-xl font-bold">Stempel</h3>
-                    <p class="text-gray-500">Pembuatan stempel berkualitas tinggi untuk kebutuhan bisnis atau pribadi.
-                    </p>
-                </div>
-                <div class="flex flex-col items-center text-center">
+                    <p class="text-gray-500">Pembuatan stempel berkualitas tinggi untuk kebutuhan bisnis atau
+                        pribadi.</p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20mencetak%20nota%20dan%20dokumen%20transaksi.%20Bisa%20dibantu?"
+                    target="_blank" class="card-list">
                     <i data-feather="file-text" class="w-10 h-10 text-red-600 mb-4"></i>
                     <h3 class="mb-2 text-xl font-bold">Nota</h3>
                     <p class="text-gray-500">Mencetak nota dan dokumen transaksi lainnya dengan desain khusus.</p>
-                </div>
-                <div class="flex flex-col items-center text-center">
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20membuat%20banner%20promosi.%20Apa%20saja%20opsinya?"
+                    target="_blank" class="card-list">
                     <i data-feather="image" class="w-10 h-10 text-red-600 mb-4"></i>
                     <h3 class="mb-2 text-xl font-bold">Banner</h3>
                     <p class="text-gray-500">Pembuatan banner promosi untuk usaha, acara, dan lainnya.</p>
-                </div>
-                <div class="flex flex-col items-center text-center">
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20mencetak%20dokumen.%20Apakah%20bisa%20dibantu?"
+                    target="_blank" class="card-list">
                     <i data-feather="printer" class="w-10 h-10 text-red-600 mb-4"></i>
                     <h3 class="mb-2 text-xl font-bold">Print</h3>
-                    <p class="text-gray-500">Layanan cetak dokumen hitam putih maupun berwarna dengan hasil tajam.</p>
-                </div>
-                <div class="flex flex-col items-center text-center">
+                    <p class="text-gray-500">Layanan cetak dokumen hitam putih maupun berwarna dengan hasil tajam.
+                    </p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20scan%20dokumen%20dengan%20resolusi%20tinggi.%20Bisa%20dibantu?"
+                    target="_blank" class="card-list">
                     <i data-feather="search" class="w-10 h-10 text-red-600 mb-4"></i>
                     <h3 class="mb-2 text-xl font-bold">Scan</h3>
                     <p class="text-gray-500">Layanan scan dokumen dan gambar dengan resolusi tinggi.</p>
-                </div>
-                <div class="flex flex-col items-center text-center">
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20mencetak%20foto%20dengan%20kualitas%20premium.%20Bagaimana%20prosedurnya?"
+                    target="_blank" class="card-list">
                     <i data-feather="camera" class="w-10 h-10 text-red-600 mb-4"></i>
                     <h3 class="mb-2 text-xl font-bold">Cetak Foto</h3>
                     <p class="text-gray-500">Cetak foto dengan berbagai ukuran dan kualitas premium.</p>
-                </div>
-                <div class="flex flex-col items-center text-center">
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20butuh%20layanan%20pengetikan%20dokumen.%20Bisa%20dibantu?"
+                    target="_blank" class="card-list">
                     <i data-feather="edit" class="w-10 h-10 text-red-600 mb-4"></i>
                     <h3 class="mb-2 text-xl font-bold">Ketik</h3>
-                    <p class="text-gray-500">Layanan pengetikan dokumen untuk kebutuhan akademis, bisnis, dan lainnya.
-                    </p>
-                </div>
-                <div class="flex flex-col items-center text-center">
+                    <p class="text-gray-500">Layanan pengetikan dokumen untuk kebutuhan akademis, bisnis, dan
+                        lainnya.</p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20bertanya%20tentang%20layanan%20percetakan%20lainnya.%20Bisa%20dijelaskan?"
+                    target="_blank" class="card-list">
                     <i data-feather="more-horizontal" class="w-10 h-10 text-red-600 mb-4"></i>
                     <h3 class="mb-2 text-xl font-bold">Lainnya</h3>
                     <p class="text-gray-500">Berbagai layanan percetakan lainnya sesuai kebutuhan Anda.</p>
-                </div>
+                </a>
             </div>
+            <!-- end services -->
         </div>
     </section>
     <!-- end services -->
