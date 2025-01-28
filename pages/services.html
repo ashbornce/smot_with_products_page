@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Layanan percetakan berkualitas untuk undangan, stempel, nota, banner, cetak foto, dan lainnya. Temukan solusi cetak terbaik di SMOT Printing.">
+    <meta name="keywords"
+        content="percetakan, cetak undangan, cetak stempel, cetak nota, cetak banner, cetak dokumen, cetak foto, layanan scan, layanan ketik, SMOT Printing">
+    <title>SMOT.com Printing - Layanan Percetakan Berkualitas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .nav-item {
+            @apply text-gray-900 font-semibold hover:text-red-800 hover:shadow-red-950;
+        }
+
+        .card-list{
+            @apply flex flex-col items-center text-center hover:border hover:border-red-500 rounded-lg;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hidden md:block w-full bg-red-600 py-1 text-red-600 text-center font-semibold">
+            <a href="https://maps.app.goo.gl/pTyvWewbgQ3zC3Wm6" target="_blank"
+                class="inline-block bg-white py-1 px-6 rounded-tl-full rounded-br-full">Jl. Wonosobo -
+                Purworejo, Gandok,
+                Kalikajar,
+                Wonosobo Regency,
+                Central Java
+                56372
+            </a>
+        </div>
+    </header>
+    <!-- navbar -->
+    <nav
+        class="bg-white/50 backdrop-blur sticky top-0 shadow-lg shadow-black/20 z-40 text-primary flex justify-between items-center px-10 md:px-20 py-3">
+        <div class="navabar-brand">
+            <a href="../index.html" class="flex flex-col items-center text-xl font-black text-red-600"
+                style="line-height: 1;">
+                <span>SMOT.COM</span>
+                <span>KALIKAJAR</span>
+            </a>
+        </div>
+        <ul class="nav-link hidden md:flex items-center gap-10">
+            <li class="nav-item text-sd-b"><a href="../index.html#about">Tentang Kami</a></li>
+            <li class="nav-item text-sd-b"><a href="#">Layanan</a></li>
+            <li class="nav-item text-sd-b"><a href="./product.html">Produk</a></li>
+            <li class="nav-item text-sd-b"><a href="./portfolio.html">Portofolio</a></li>
+            <li class="nav-item text-sd-b"><a href="../index.html#contact">Kontak</a></li>
+        </ul>
+        <div class="nav-extra">
+            <a href="#contact"
+                class="sm:block hidden bg-red-600 px-4 py-2 text-white hover:bg-red-800 active:bg-red-800 font-semibold tracking-wide rounded-md">
+                Pesan Sekarang
+            </a>
+            <button class="hamburger text-red-600 block md:hidden"><i data-feather="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar"
+        class="fixed top-0 -right-1 h-full w-[50vw] bg-white shadow-lg shadow-black/30 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <ul class="flex flex-col items-start p-6 pt-20 text-lg">
+            <li class="mb-4 nav-item text-sd-b"><a href="../index.html#about">Tentang Kami</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="#">Layanan</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="./product.html">Produk</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="./portfolio.html">Portofolio</a></li>
+            <li class="mb-4 nav-item text-sd-b"><a href="../index.html#contact">Kontak</a></li>
+            <li><a href="#"
+                    class="sm:hidden block bg-red-600 px-4 py-2 text-white hover:bg-red-800 active:bg-red-800 font-semibold tracking-wide rounded-md">
+                    Pesan Sekarang
+                </a>
+            </li>
+        </ul>
+        <button id="closeSidebar" class="absolute text-red-600 top-10 right-10 text-xl"><i
+                data-feather="x"></i></button>
+    </div>
+    <!-- Overlay -->
+    <div id="overlay"
+        class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+
+    <!-- services -->
+    <section id="services" class="bg-white pt-12">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-extrabold text-red-600 mb-4">Layanan Unggulan Kami</h2>
+                <p class="text-lg text-gray-700">
+                    Kami menyediakan berbagai layanan percetakan berkualitas tinggi untuk memenuhi kebutuhan bisnis dan
+                    pribadi Anda.
+                </p>
+            </div>
+            <!-- services list  -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20mencetak%20undangan%20untuk%20acara%20saya.%20Apakah%20bisa%20dibantu?"
+                    target="_blank" class="card-list">
+                    <i data-feather="mail" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold text-slate-900">Undangan</h3>
+                    <p class="text-gray-500">Mencetak undangan untuk acara pernikahan, ulang tahun, atau acara
+                        formal lainnya.</p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20membuat%20stempel%20berkualitas%20tinggi.%20Bagaimana%20caranya?"
+                    target="_blank" class="card-list">
+                    <i data-feather="check-square" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Stempel</h3>
+                    <p class="text-gray-500">Pembuatan stempel berkualitas tinggi untuk kebutuhan bisnis atau
+                        pribadi.</p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20mencetak%20nota%20dan%20dokumen%20transaksi.%20Bisa%20dibantu?"
+                    target="_blank" class="card-list">
+                    <i data-feather="file-text" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Nota</h3>
+                    <p class="text-gray-500">Mencetak nota dan dokumen transaksi lainnya dengan desain khusus.</p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20membuat%20banner%20promosi.%20Apa%20saja%20opsinya?"
+                    target="_blank" class="card-list">
+                    <i data-feather="image" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Banner</h3>
+                    <p class="text-gray-500">Pembuatan banner promosi untuk usaha, acara, dan lainnya.</p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20mencetak%20dokumen.%20Apakah%20bisa%20dibantu?"
+                    target="_blank" class="card-list">
+                    <i data-feather="printer" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Print</h3>
+                    <p class="text-gray-500">Layanan cetak dokumen hitam putih maupun berwarna dengan hasil tajam.
+                    </p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20scan%20dokumen%20dengan%20resolusi%20tinggi.%20Bisa%20dibantu?"
+                    target="_blank" class="card-list">
+                    <i data-feather="search" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Scan</h3>
+                    <p class="text-gray-500">Layanan scan dokumen dan gambar dengan resolusi tinggi.</p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20mencetak%20foto%20dengan%20kualitas%20premium.%20Bagaimana%20prosedurnya?"
+                    target="_blank" class="card-list">
+                    <i data-feather="camera" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Cetak Foto</h3>
+                    <p class="text-gray-500">Cetak foto dengan berbagai ukuran dan kualitas premium.</p>
+                </a>
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20butuh%20layanan%20pengetikan%20dokumen.%20Bisa%20dibantu?"
+                    target="_blank" class="card-list">
+                    <i data-feather="edit" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Ketik</h3>
+                    <p class="text-gray-500">Layanan pengetikan dokumen untuk kebutuhan akademis, bisnis, dan
+                        lainnya.</p>
+                </a>
+                <!-- lainnya -->
+                <a href="https://wa.me/6283879367174?text=Halo,%20saya%20ingin%20bertanya%20tentang%20layanan%20percetakan%20lainnya.%20Bisa%20dijelaskan?"
+                    target="_blank" class="card-list">
+                    <i data-feather="more-horizontal" class="w-10 h-10 text-red-600 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-bold">Lainnya</h3>
+                    <p class="text-gray-500">Berbagai layanan percetakan lainnya sesuai kebutuhan Anda.</p>
+                </a>
+            </div>
+            <!-- end services -->
+        </div>
+    </section>
+    <!-- end services -->
+
+    <script>feather.replace();</script>
+    <script type="module" src="../src/js/main.mjs"></script>
+</body>
+
+</html>
