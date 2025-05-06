@@ -245,7 +245,7 @@ function updateCartQuantity() {
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('cart-form');
     const submitButton = document.getElementById('submit-btn');
-    const whatsappNumber = '6283879367174'; // Ganti dengan nomor WhatsApp tujuan
+    const whatsappNumber = '6285703910062'; // Ganti dengan nomor WhatsApp tujuan
 
     // Fungsi untuk menyusun pesan WhatsApp
     function createWhatsAppMessage(cart, formData) {
