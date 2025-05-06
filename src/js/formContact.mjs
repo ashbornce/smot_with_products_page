@@ -17,7 +17,7 @@ export default function sendToWhatsApp(event) {
     const whatsappMessage = `Nomor: ${number}\nNama: ${name}\nPesan: ${message}`;
 
     // Replace with the recipient's WhatsApp number, including country code
-    const whatsappNumber = '6283879367174';
+    const whatsappNumber = '6285703910062';
 
     // Build WhatsApp URL
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
